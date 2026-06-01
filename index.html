@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment-4</title>
+  <link rel="icon" href="./favicon.ico">
+
+  <!-- tailwindcss -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- daisy ui -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<!-- google font -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet">
+
+<!-- font awesome -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+  * {
+    font-family: "geist", sans-serif;
+  }
+</style>
+
+<body class="bg-[#F8FAFC]">
+
+  <header class="max-w-[1110px] mx-auto">
+    <h1 class="font-bold text-[32px] pt-8">Job Application Tracker</h1>
+
+    <div class="grid grid-cols-3 gap-2">
+      <div class="bg-[#FFFFFF] rounded-sm pt-4 pb-4 pl-[20px] text-start ">
+        <p class="text-gray-600">All</p>
+        <h3 id="total-all" class="font-bold text-2xl">8</h3>
+      </div>
+      <div class="bg-[#FFFFFF] rounded-sm pt-4 pb-4 pl-[20px] text-start">
+        <p class="text-gray-600">Interview</p>
+        <h3 id="total-interview" class="font-bold text-2xl text-green-600">0</h3>
+      </div>
+      <div class="bg-[#FFFFFF] rounded-sm pt-4 pb-4 pl-[20px] text-start">
+        <p class="text-gray-600">Rejected</p>
+        <h3 id="total-rejected" class="font-bold text-2xl text-red-500">0</h3>
+      </div>
+
+    </div>
+
+
+
+
+  </header>
+
+  <section class="max-w-[1110px] mx-auto ">
+    <div class="border-t-2 border-gray-200 mt-10 flex justify-between ">
+      <h1 class="mt-10 pb-4">Available Jobs</h1>
+      <p id="available-jobs" class="pt-11">8 jobs</p>
+    </div>
+
+
+    <button onclick="showonly('all')" class="btn btn-soft btn-info">
+      <p class="text-black">all</p>
+    </button>
+    <button onclick="showonly('interview')" class="btn btn-soft btn-info">
+      <p class="text-black">Interview</p>
+    </button>
+    <button onclick="showonly('rejected')" class="btn btn-soft btn-info ">
+      <p class="text-black ">Rejected</p>
+    </button>
+
+
+
+
+  </section>
+
+
+
+
+  <section id="all" class="max-w-[1110px] mx-auto bg-[#FFFFFF] mt-5 ">
+
+    <!-- apply-card-1 -->
+    <div id="apply-card-1" class=" job-card bg-[#FFFFFF] mt-3 pl-5 pb-5">
+      <div class="flex justify-between">
+        <h1 class="pt-5 font-bold text-[16px]">Mobile First Corp</h1>
+        <button class=" trash-btn pr-2"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+      <p class="text-[#64748B]">React Native Developer</p>
+      <div class="flex gap-3">
+        <p class="pt-3 text-[#64748B]">Remote</p>
+        <ul class="list-disc list-inside flex gap-3 pt-3 text-[#64748B]">
+          <li>Full Time</li>
+          <li>$130,000 - $175,000</li>
+        </ul>
+      </div>
+      <!-- confirm badge badge -->
+      <div id="badge-interview-1" class="badge badge-success mt-2 hidden">Interview</div>
+      <div id="badge-rejected-1" class="badge badge-error mt-2 hidden">Rejected</div>
+
+      <p class="pt-3 text-[#64748B] pb-2">Build cross-platform mobile applications using React Native. Work on products
+        used
+        by millions of
+        users
+        worldwide.</p>
+      <div id="real-buttons-1">
+        <button id="interview-1" class="interview-btn btn btn-outline btn-accent">Interview</button>
+        <button id="rejected-1" class=" reject-btn btn btn-outline btn-error ">Rejected</button>
+      </div>
+    </div>
+
+
+
+    <!-- apply card-2 -->
+    <div class="job-card bg-[#FFFFFF] mt-3 pl-5 pb-5">
+      <div class="flex justify-between">
+        <h1 class="pt-5 font-bold text-[16px]">Mobile second Corp</h1>
+        <button class="trash-btn pr-2"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+      <p class="text-[#64748B]">React Native Developer</p>
+      <div class="flex gap-3">
+        <p class="pt-3 text-[#64748B]">Remote</p>
+        <ul class="list-disc list-inside flex gap-3 pt-3 text-[#64748B]">
+          <li>Full Time</li>
+          <li>$130,000 - $175,000</li>
+        </ul>
+      </div>
+      <!-- confirm badge -->
+      <div id="badge-interview-2" class="badge badge-success mt-2 hidden">Interview</div>
+      <div id="badge-rejected-2" class="badge badge-error mt-2 hidden">Rejected</div>
+
+      <p class="pt-3 text-[#64748B] pb-2">Build cross-platform mobile applications using React Native. Work on
+        products
+        used
+        by millions of
+        users
+        worldwide.</p>
+      <button id="interview-2" class="btn btn-outline btn-accent">Interview</button>
+      <button id="rejected-2" class=" btn btn-outline btn-error ">Rejected</button>
+    </div>
+    <!-- apply card-3 -->
+    <div class="job-card bg-[#FFFFFF] mt-3 pl-5 pb-5">
+      <div class="flex justify-between">
+        <h1 class="pt-5 font-bold text-[16px]">Mobile third Corp</h1>
+        <button class=" trash-btn pr-2"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+      <p class="text-[#64748B]">React Native Developer</p>
+      <div class="flex gap-3">
+        <p class="pt-3 text-[#64748B]">Remote</p>
+        <ul class="list-disc list-inside flex gap-3 pt-3 text-[#64748B]">
+          <li>Full Time</li>
+          <li>$130,000 - $175,000</li>
+        </ul>
+      </div>
+      <div id="badge-interview-3" class="badge badge-success mt-2 hidden">Interview</div>
+      <div id="badge-rejected-3" class="badge badge-error mt-2 hidden">Rejected</div>
+
+      <p class="pt-3 text-[#64748B] pb-2">Build cross-platform mobile applications using React Native. Work on
+        products
+        used
+        by millions of
+        users
+        worldwide.</p>
+      <button id="interview-3" class="btn btn-outline btn-accent">Interview</button>
+      <button id="rejected-3" class=" btn btn-outline btn-error ">Rejected</button>
+    </div>
+    <!-- apply card-4 -->
+    <div class="job-card bg-[#FFFFFF] mt-3 pl-5 pb-5">
+      <div class="flex justify-between">
+        <h1 class="pt-5 font-bold text-[16px]">Mobile fourth Corp</h1>
+        <button class="trash-btn pr-2"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+      <p class="text-[#64748B]">React Native Developer</p>
+      <div class="flex gap-3">
+        <p class="pt-3 text-[#64748B]">Remote</p>
+        <ul class="list-disc list-inside flex gap-3 pt-3 text-[#64748B]">
+          <li>Full Time</li>
+          <li>$130,000 - $175,000</li>
+        </ul>
+      </div>
+      <div id="badge-interview-4" class="badge badge-success mt-2 hidden">Interview</div>
+      <div id="badge-rejected-4" class="badge badge-error mt-2 hidden">Rejected</div>
+
+      <p class="pt-3 text-[#64748B] pb-2">Build cross-platform mobile applications using React Native. Work on
+        products
+        used
+        by millions of
+        users
+        worldwide.</p>
+      <button id="interview-4" class="btn btn-outline btn-accent">Interview</button>
+      <button id="rejected-4" class=" btn btn-outline btn-error ">Rejected</button>
+    </div>
+
+    <!-- apply card-5 -->
+    <div class="job-card bg-[#FFFFFF] mt-3 pl-5 pb-5">
+      <div class="flex justify-between">
+        <h1 class="pt-5 font-bold text-[16px]">Mobile five Corp</h1>
+        <button class="trash-btn pr-2"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+      <p class="text-[#64748B]">React Native Developer</p>
+      <div class="flex gap-3">
+        <p class="pt-3 text-[#64748B]">Remote</p>
+        <ul class="list-disc list-inside flex gap-3 pt-3 text-[#64748B]">
+          <li>Full Time</li>
+          <li>$130,000 - $175,000</li>
+        </ul>
+      </div>
+      <div id="badge-interview-5" class="badge badge-success mt-2 hidden">Interview</div>
+      <div id="badge-rejected-5" class="badge badge-error mt-2 hidden">Rejected</div>
+
+
+      <p class="pt-3 text-[#64748B] pb-2">Build cross-platform mobile applications using React Native. Work on
+        products
+        used
+        by millions of
+        users
+        worldwide.</p>
+      <button id="interview-5" class="btn btn-outline btn-accent">Interview</button>
+      <button id="rejected-5" class=" btn btn-outline btn-error ">Rejected</button>
+    </div>
+    <!-- apply card-6 -->
+    <div class="job-card bg-[#FFFFFF] mt-3 pl-5 pb-5">
+      <div class="flex justify-between">
+        <h1 class="pt-5 font-bold text-[16px]">Mobile six Corp</h1>
+        <button class="trash-btn pr-2"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+      <p class="text-[#64748B]">React Native Developer</p>
+      <div class="flex gap-3">
+        <p class="pt-3 text-[#64748B]">Remote</p>
+        <ul class="list-disc list-inside flex gap-3 pt-3 text-[#64748B]">
+          <li>Full Time</li>
+          <li>$130,000 - $175,000</li>
+        </ul>
+      </div>
+      <div id="badge-interview-6" class="badge badge-success mt-2 hidden">Interview</div>
+      <div id="badge-rejected-6" class="badge badge-error mt-2 hidden">Rejected</div>
+
+      <p class="pt-3 text-[#64748B] pb-2">Build cross-platform mobile applications using React Native. Work on
+        products
+        used
+        by millions of
+        users
+        worldwide.</p>
+      <button id="interview-6" class="btn btn-outline btn-accent">Interview</button>
+      <button id="rejected-6" class=" btn btn-outline btn-error ">Rejected</button>
+    </div>
+    <!-- apply card-7 -->
+    <div class="job-card bg-[#FFFFFF] mt-3 pl-5 pb-5">
+      <div class="flex justify-between">
+        <h1 class="pt-5 font-bold text-[16px]">Mobile seven Corp</h1>
+        <button class="trash-btn pr-2"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+      <p class="text-[#64748B]">React Native Developer</p>
+      <div class="flex gap-3">
+        <p class="pt-3 text-[#64748B]">Remote</p>
+        <ul class="list-disc list-inside flex gap-3 pt-3 text-[#64748B]">
+          <li>Full Time</li>
+          <li>$130,000 - $175,000</li>
+        </ul>
+      </div>
+      <div id="badge-interview-7" class="badge badge-success mt-2 hidden">Interview</div>
+      <div id="badge-rejected-7" class="badge badge-error mt-2 hidden">Rejected</div>
+
+      <p class="pt-3 text-[#64748B] pb-2">Build cross-platform mobile applications using React Native. Work on
+        products
+        used
+        by millions of
+        users
+        worldwide.</p>
+      <button id="interview-7" class="btn btn-outline btn-accent">Interview</button>
+      <button id="rejected-7" class=" btn btn-outline btn-error ">Rejected</button>
+    </div>
+    <!-- apply card-8 -->
+    <div class="job-card bg-[#FFFFFF] mt-3 pl-5 pb-5">
+      <div class="flex justify-between">
+        <h1 class="pt-5 font-bold text-[16px]">Mobile eight Corp</h1>
+        <button class="trash-btn pr-2"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+      <p class="text-[#64748B]">React Native Developer</p>
+      <div class="flex gap-3">
+        <p class="pt-3 text-[#64748B]">Remote</p>
+        <ul class="list-disc list-inside flex gap-3 pt-3 text-[#64748B]">
+          <li>Full Time</li>
+          <li>$130,000 - $175,000</li>
+        </ul>
+      </div>
+      <div id="badge-interview-8" class="badge badge-success mt-2 hidden">Interview</div>
+      <div id="badge-rejected-8" class="badge badge-error mt-2 hidden">Rejected</div>
+
+      <p class="pt-3 text-[#64748B] pb-2">Build cross-platform mobile applications using React Native. Work on
+        products
+        used
+        by millions of
+        users
+        worldwide.</p>
+      <button id="interview-8" class="btn btn-outline btn-accent">Interview</button>
+      <button id="rejected-8" class=" btn btn-outline btn-error ">Rejected</button>
+    </div>
+  </section>
+
+  <!-- interview-btn -->
+
+  <section id="interview" class="hidden max-w-[1110px] mx-auto mt-5 bg-[#FFFFFF]">
+
+    <div id="interview-empty-msg">
+      <img class="mx-auto pt-5 " src="jobs.png" alt="">
+      <h1 class="text-center font-bold pt-5">No jobs Available</h1>
+      <p class="text-center pb-5">There are no jobs card here</p>
+    </div>
+    <div id="interview-container"></div>
+  </section>
+
+  <!-- rejected-btn
+ -->
+
+  <section id="rejected" class="hidden max-w-[1110px] bg-[#FFFFFF] mt-5 mx-auto">
+
+    <div id="rejected-empty-msg">
+      <img class="mx-auto pt-5 " src="jobs.png" alt="">
+      <h1 class="text-center font-bold pt-5">No jobs Rejected</h1>
+      <p class="text-center pb-5">There are no Rejected card here</p>
+
+    </div>
+    <div id="rejected-container">
+
+    </div>
+  </section>
+
+  <script src="machine.js"></script>
+  <script src="interview.js"></script>
+  <script src="interview2.js"></script>
+  <script src="interview3.js"></script>
+  <script src="interview4.js"></script>
+  <script src="interview5.js"></script>
+  <script src="interview6.js"></script>
+  <script src="interview7.js"></script>
+  <script src="interview8.js"></script>
+  <script src="reject.js"></script>
+  <script src="rejected2.js"></script>
+  <script src="rejected3.js"></script>
+  <script src="rejected4.js"></script>
+  <script src="rejected5.js"></script>
+  <script src="rejected6.js"></script>
+  <script src="rejected7.js"></script>
+  <script src="rejected8.js"></script>
+
+
+
+
+</body>
+
+</html>
