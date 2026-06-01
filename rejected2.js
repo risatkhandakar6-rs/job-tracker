@@ -16,7 +16,7 @@ rejectedBtn2.addEventListener('click', function () {
 
   const rejectedContainer = document.getElementById('rejected-container');
   const newRejectedElements = document.createElement('div');
-  newRejectedElements.innerHTML=` <div class="bg-[#FFFFFF] mt-3 pl-5 pb-5">
+  newRejectedElements.innerHTML=` <div class="bg-[#FFFFFF] mt-3 pl-3 pb-5">
       <div class="flex justify-between">
         <h1 class="pt-5 font-bold text-[16px]">Mobile Second Corp</h1>
         <button class=" pr-2"><i class="fa-solid fa-trash-can"></i></button>

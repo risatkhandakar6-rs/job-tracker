@@ -18,7 +18,7 @@ interviewBtn4.addEventListener('click', function () {
 
   const interviewContainer = document.getElementById('interview-container');
   const newInterview = document.createElement('div');
-  newInterview.innerHTML =`<div class="bg-[#FFFFFF] mt-3 pl-5 pb-5">
+  newInterview.innerHTML =`<div class="bg-[#FFFFFF] mt-3 pl-3 pb-5">
       <div class="flex justify-between">
         <h1 class="pt-5 font-bold text-[16px]">Mobile Fourth Corp</h1>
         <button class="pr-2"><i class="fa-solid fa-trash-can"></i></button>
