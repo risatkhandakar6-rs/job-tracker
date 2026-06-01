@@ -53,24 +53,14 @@ document.querySelectorAll('.trash-btn').forEach(function (btn) {
     card.remove();
      updateAvailableJobsText(currentFilter);
   })
+
 })
-
-
-document.addEventListener('click', function (x) {
-  if (x.target.closest('.fa-trash-can')) {
-    const box = x.target.closest('div[class*="mt-3"]').parentElement;
-    const badge = box.querySelector('.badge');
-
-    if (badge) {
-      if (badge.classList.contains('badge-success')) {
-        document.getElementById('total-interview').innerText = Number(document.getElementById('total-interview').innertext) - 1;
-
-      } else {
-        document.getElementById('total-rejcted').innerText = Number(document.getElementById('total-rejected').innerText) - 1
-      }
-      
-    }
-    box.remove();
-    updateAvailableJobsText(currentFilter);
-  }
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.fa-trash-can')) return;
+  const wrapper = e.target.closest('div[class*="mt-3"]').parentElement;
+  const badge = wrapper.querySelector('.badge');
+  if (badge?.classList.contains('badge-success')) document.getElementById('total-interview').innerText--;
+  else if (badge?.classList.contains('badge-error')) document.getElementById('total-rejected').innerText--;
+  wrapper.remove();
+  updateAvailableJobsText(currentFilter);
 });

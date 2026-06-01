@@ -1,14 +1,10 @@
 document.getElementById('rejected-1').addEventListener('click', function () {
 
   const card = this.closest('.job-card');
-
-  // আগে move হলে stop
   if (card.dataset.moved === "true") return;
-
-  // lock
   card.dataset.moved = "true";
 
-  // দুই button disable
+
   card.querySelector('.interview-btn').style.pointerEvents = 'none';
   card.querySelector('.reject-btn').style.pointerEvents = 'none';
 
